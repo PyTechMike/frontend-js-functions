@@ -64,6 +64,20 @@ describe('The function', function () {
 			});
 		});
 
+		describe('correctly finds minimal values in arrays of not numbers', function () {
+			it('[true, false]', function () {
+				array = [true, false];
+				result = max(array);
+				expect(result).toBe(undefined);
+			});
+
+			it('[undefined, "test", " ", null, {}, []]', function () {
+				array = [undefined, "test", " ", null, {}, []];
+				result = max(array);
+				expect(result).toBe(undefined);
+			});
+		});
+
 		it('doesn\'t mutate passed array', function () {
 			array = [10, 45, 55, 100, 66, 4, 99];
 			originArray = array.concat();
@@ -132,6 +146,26 @@ describe('The function', function () {
 				array = [null, false, "4", undefined, true, 99];
 				result = max(array);
 				expect(result).toBe(99);
+			});
+
+			it('[false, "10000", undefined, true, 99, 524]', function () {
+				array = [null, false, "10000", undefined, true, 99, 524];
+				result = min(array);
+				expect(result).toBe(99);
+			});
+		});
+
+		describe('correctly finds maximal values in arrays of not numbers', function () {
+			it('[true, false]', function () {
+				array = [true, false];
+				result = max(array);
+				expect(result).toBe(undefined);
+			});
+
+			it('[undefined, "test", " ", null, {}, []]', function () {
+				array = [undefined, "test", " ", null, {}, []];
+				result = max(array);
+				expect(result).toBe(undefined);
 			});
 		});
 
