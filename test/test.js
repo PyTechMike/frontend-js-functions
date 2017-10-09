@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-           
+console.log(12132)   
 describe('The function', function () {
 	var array;
 	var originArray;
